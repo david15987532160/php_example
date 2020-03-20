@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d5ba5729-ebc0-4fea-9403-ea47b7f4e48d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="my_project: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="my_project: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="item_types: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="my_project: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="items: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="my_project: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="migrations: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" xdebug_force_break_when_outside_project="false" />
+  <component name="PhpServers">
+    <servers>
+      <server host="127.0.0.1" id="3703ec4a-88a1-4a18-ad33-e04c4971003a" name="127.0.0.1" port="8000" />
+      <server host="127.0.0.1" id="8d37bfdd-33d0-4b69-8db0-95b4de0f9c12" name="127.0.0.1 (1)" port="8001" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1YZCTsLKN5G939R40uZdodegzIt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DBE.Init.BalloonShown" value="true" />
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/app/Model" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.UserController.php">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@7b4db621" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@95cfdf0" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5ba5729-ebc0-4fea-9403-ea47b7f4e48d" name="Default Changelist" comment="" />
+      <created>1583140739036</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583140739036</updated>
+      <workItem from="1583140743107" duration="2860000" />
+      <workItem from="1583198091049" duration="3641000" />
+      <workItem from="1583231250550" duration="2092000" />
+      <workItem from="1583287354879" duration="8310000" />
+      <workItem from="1583380985006" duration="8821000" />
+      <workItem from="1583397543712" duration="2321000" />
+      <workItem from="1583481089353" duration="2442000" />
+      <workItem from="1583489510780" duration="157000" />
+      <workItem from="1583489671903" duration="686000" />
+      <workItem from="1583921229156" duration="445000" />
+      <workItem from="1587439979076" duration="6829000" />
+      <workItem from="1584070262203" duration="5749000" />
+      <workItem from="1584324417757" duration="1740000" />
+      <workItem from="1584442127759" duration="1254000" />
+      <workItem from="1584497004278" duration="2009000" />
+      <workItem from="1584499093315" duration="3317000" />
+      <workItem from="1584580394820" duration="682000" />
+      <workItem from="1584583053429" duration="25293000" />
+      <workItem from="1584669746903" duration="24551000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="483" y="133" key="#CLI_Interpreters" timestamp="1583400262434">
+      <screen x="76" y="23" width="1844" height="1057" />
+    </state>
+    <state x="483" y="133" key="#CLI_Interpreters/76.23.1844.1057@76.23.1844.1057" timestamp="1583400262434" />
+    <state x="466" y="52" key="#File_Watchers" timestamp="1583393807678">
+      <screen x="76" y="23" width="1844" height="1057" />
+    </state>
+    <state x="466" y="52" key="#File_Watchers/76.23.1844.1057@76.23.1844.1057" timestamp="1583393807678" />
+    <state x="468" y="52" key="#File_Watchers/78.23.1842.1057@78.23.1842.1057" timestamp="1583233200411" />
+    <state x="804" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584671134198">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state x="803" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/73.23.1847.1057@73.23.1847.1057" timestamp="1584588885735" />
+    <state x="804" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/75.23.1845.1057@75.23.1845.1057" timestamp="1584671134198" />
+    <state x="805" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/76.23.1844.1057@76.23.1844.1057" timestamp="1583382076140" />
+    <state x="733" y="196" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1584499507613">
+      <screen x="73" y="23" width="1847" height="1057" />
+    </state>
+    <state x="733" y="196" key="#com.intellij.ide.macro.MacrosDialog/73.23.1847.1057@73.23.1847.1057" timestamp="1584499507613" />
+    <state x="735" y="196" key="#com.intellij.ide.macro.MacrosDialog/76.23.1844.1057@76.23.1844.1057" timestamp="1583396041686" />
+    <state x="736" y="196" key="#com.intellij.ide.macro.MacrosDialog/78.23.1842.1057@78.23.1842.1057" timestamp="1583232892723" />
+    <state x="617" y="155" key="#phpunit.xml" timestamp="1583231266181">
+      <screen x="78" y="23" width="1842" height="1057" />
+    </state>
+    <state x="617" y="155" key="#phpunit.xml/78.23.1842.1057@78.23.1842.1057" timestamp="1583231266181" />
+    <state x="629" y="108" width="859" height="813" key="EditFileWatcherDialog" timestamp="1584611233422">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state x="628" y="108" key="EditFileWatcherDialog/73.23.1847.1057@73.23.1847.1057" timestamp="1584499636489" />
+    <state x="629" y="108" key="EditFileWatcherDialog/75.23.1845.1057@75.23.1845.1057" timestamp="1584611233422" />
+    <state x="549" y="175" width="859" height="813" key="EditFileWatcherDialog/76.23.1844.1057@76.23.1844.1057" timestamp="1583397773131" />
+    <state x="569" y="285" key="EditFileWatcherDialog/78.23.1842.1057@78.23.1842.1057" timestamp="1583233199842" />
+    <state width="1792" height="156" key="GridCell.Tab.0.bottom" timestamp="1584700364288">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="256" key="GridCell.Tab.0.bottom/73.23.1847.1057@73.23.1847.1057" timestamp="1584589388684" />
+    <state width="1792" height="156" key="GridCell.Tab.0.bottom/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364288" />
+    <state width="1792" height="386" key="GridCell.Tab.0.bottom/76.23.1844.1057@76.23.1844.1057" timestamp="1583489667388" />
+    <state width="1792" height="228" key="GridCell.Tab.0.bottom/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517218" />
+    <state width="1792" height="156" key="GridCell.Tab.0.center" timestamp="1584700364287">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="256" key="GridCell.Tab.0.center/73.23.1847.1057@73.23.1847.1057" timestamp="1584589388684" />
+    <state width="1792" height="156" key="GridCell.Tab.0.center/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364287" />
+    <state width="1792" height="386" key="GridCell.Tab.0.center/76.23.1844.1057@76.23.1844.1057" timestamp="1583489667387" />
+    <state width="1792" height="228" key="GridCell.Tab.0.center/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517217" />
+    <state width="1792" height="156" key="GridCell.Tab.0.left" timestamp="1584700364287">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="256" key="GridCell.Tab.0.left/73.23.1847.1057@73.23.1847.1057" timestamp="1584589388684" />
+    <state width="1792" height="156" key="GridCell.Tab.0.left/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364287" />
+    <state width="1792" height="386" key="GridCell.Tab.0.left/76.23.1844.1057@76.23.1844.1057" timestamp="1583489667387" />
+    <state width="1792" height="228" key="GridCell.Tab.0.left/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517217" />
+    <state width="1792" height="156" key="GridCell.Tab.0.right" timestamp="1584700364288">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="256" key="GridCell.Tab.0.right/73.23.1847.1057@73.23.1847.1057" timestamp="1584589388684" />
+    <state width="1792" height="156" key="GridCell.Tab.0.right/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364288" />
+    <state width="1792" height="386" key="GridCell.Tab.0.right/76.23.1844.1057@76.23.1844.1057" timestamp="1583489667388" />
+    <state width="1792" height="228" key="GridCell.Tab.0.right/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517217" />
+    <state width="1792" height="156" key="GridCell.Tab.1.bottom" timestamp="1584700364289">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="386" key="GridCell.Tab.1.bottom/73.23.1847.1057@73.23.1847.1057" timestamp="1584589365488" />
+    <state width="1792" height="156" key="GridCell.Tab.1.bottom/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364289" />
+    <state width="1792" height="386" key="GridCell.Tab.1.bottom/76.23.1844.1057@76.23.1844.1057" timestamp="1583489667389" />
+    <state width="1792" height="228" key="GridCell.Tab.1.bottom/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517219" />
+    <state width="1792" height="156" key="GridCell.Tab.1.center" timestamp="1584700364288">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="386" key="GridCell.Tab.1.center/73.23.1847.1057@73.23.1847.1057" timestamp="1584589365488" />
+    <state width="1792" height="156" key="GridCell.Tab.1.center/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364288" />
+    <state width="1792" height="386" key="GridCell.Tab.1.center/76.23.1844.1057@76.23.1844.1057" timestamp="1583489667388" />
+    <state width="1792" height="228" key="GridCell.Tab.1.center/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517218" />
+    <state width="1792" height="156" key="GridCell.Tab.1.left" timestamp="1584700364288">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="386" key="GridCell.Tab.1.left/73.23.1847.1057@73.23.1847.1057" timestamp="1584589365487" />
+    <state width="1792" height="156" key="GridCell.Tab.1.left/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364288" />
+    <state width="1792" height="386" key="GridCell.Tab.1.left/76.23.1844.1057@76.23.1844.1057" timestamp="1583489667388" />
+    <state width="1792" height="228" key="GridCell.Tab.1.left/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517218" />
+    <state width="1792" height="156" key="GridCell.Tab.1.right" timestamp="1584700364289">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="386" key="GridCell.Tab.1.right/73.23.1847.1057@73.23.1847.1057" timestamp="1584589365488" />
+    <state width="1792" height="156" key="GridCell.Tab.1.right/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364289" />
+    <state width="1792" height="386" key="GridCell.Tab.1.right/76.23.1844.1057@76.23.1844.1057" timestamp="1583489667389" />
+    <state width="1792" height="228" key="GridCell.Tab.1.right/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517219" />
+    <state width="1792" height="156" key="GridCell.Tab.2.bottom" timestamp="1584700364289">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="156" key="GridCell.Tab.2.bottom/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364289" />
+    <state width="1792" height="320" key="GridCell.Tab.2.bottom/76.23.1844.1057@76.23.1844.1057" timestamp="1583489419077" />
+    <state width="1792" height="228" key="GridCell.Tab.2.bottom/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517220" />
+    <state width="1792" height="156" key="GridCell.Tab.2.center" timestamp="1584700364289">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="156" key="GridCell.Tab.2.center/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364289" />
+    <state width="1792" height="320" key="GridCell.Tab.2.center/76.23.1844.1057@76.23.1844.1057" timestamp="1583489419077" />
+    <state width="1792" height="228" key="GridCell.Tab.2.center/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517219" />
+    <state width="1792" height="156" key="GridCell.Tab.2.left" timestamp="1584700364289">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="156" key="GridCell.Tab.2.left/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364289" />
+    <state width="1792" height="320" key="GridCell.Tab.2.left/76.23.1844.1057@76.23.1844.1057" timestamp="1583489419077" />
+    <state width="1792" height="228" key="GridCell.Tab.2.left/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517219" />
+    <state width="1792" height="156" key="GridCell.Tab.2.right" timestamp="1584700364289">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="1792" height="156" key="GridCell.Tab.2.right/75.23.1845.1057@75.23.1845.1057" timestamp="1584700364289" />
+    <state width="1792" height="320" key="GridCell.Tab.2.right/76.23.1844.1057@76.23.1844.1057" timestamp="1583489419077" />
+    <state width="1792" height="228" key="GridCell.Tab.2.right/77.23.1843.1057@77.23.1843.1057" timestamp="1584590517220" />
+    <state width="245" height="589" key="HiddenNamespacesPopup" timestamp="1583306391308">
+      <screen x="76" y="23" width="1844" height="1057" />
+    </state>
+    <state width="245" height="589" key="HiddenNamespacesPopup/76.23.1844.1057@76.23.1844.1057" timestamp="1583306391308" />
+    <state x="815" y="464" key="NewPhpFileDialog" timestamp="1584692135626">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state x="815" y="464" key="NewPhpFileDialog/75.23.1845.1057@75.23.1845.1057" timestamp="1584692135626" />
+    <state x="836" y="331" key="PhpDebugProjectChooserDialog" timestamp="1583489753346">
+      <screen x="76" y="23" width="1844" height="1057" />
+    </state>
+    <state x="836" y="331" key="PhpDebugProjectChooserDialog/76.23.1844.1057@76.23.1844.1057" timestamp="1583489753346" />
+    <state x="396" y="103" key="SettingsEditor" timestamp="1584673496328">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state x="394" y="103" key="SettingsEditor/73.23.1847.1057@73.23.1847.1057" timestamp="1584589352042" />
+    <state x="396" y="103" key="SettingsEditor/75.23.1845.1057@75.23.1845.1057" timestamp="1584673496328" />
+    <state x="396" y="103" key="SettingsEditor/76.23.1844.1057@76.23.1844.1057" timestamp="1583489548498" />
+    <state x="398" y="103" key="SettingsEditor/78.23.1842.1057@78.23.1842.1057" timestamp="1583233342526" />
+    <state x="176" y="123" width="1644" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583399347191">
+      <screen x="76" y="23" width="1844" height="1057" />
+    </state>
+    <state x="176" y="123" width="1644" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog/76.23.1844.1057@76.23.1844.1057" timestamp="1583399347191" />
+    <state x="73" y="23" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1584589230119">
+      <screen x="73" y="23" width="1847" height="1057" />
+    </state>
+    <state x="73" y="23" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/73.23.1847.1057@73.23.1847.1057" timestamp="1584589230119" />
+    <state width="750" height="540" key="javadoc.popup" timestamp="1584677878326">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state width="750" height="540" key="javadoc.popup/75.23.1845.1057@75.23.1845.1057" timestamp="1584677878326" />
+    <state x="76" y="249" key="scopes" timestamp="1583397290018">
+      <screen x="76" y="23" width="1844" height="1057" />
+    </state>
+    <state x="76" y="249" key="scopes/76.23.1844.1057@76.23.1844.1057" timestamp="1583397290018" />
+    <state x="579" y="48" width="840" height="1032" key="search.everywhere.popup" timestamp="1584690861599">
+      <screen x="75" y="23" width="1845" height="1057" />
+    </state>
+    <state x="578" y="48" width="840" height="1032" key="search.everywhere.popup/73.23.1847.1057@73.23.1847.1057" timestamp="1584588536565" />
+    <state x="579" y="48" width="840" height="1032" key="search.everywhere.popup/75.23.1845.1057@75.23.1845.1057" timestamp="1584690861599" />
+    <state x="580" y="48" width="838" height="1032" key="search.everywhere.popup/76.23.1844.1057@76.23.1844.1057" timestamp="1583489687092" />
+  </component>
+</project>

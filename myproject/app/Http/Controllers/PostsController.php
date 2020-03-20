@@ -65,7 +65,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::where('id', $id);
     }
 
     /**

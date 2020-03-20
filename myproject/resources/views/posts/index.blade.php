@@ -6,22 +6,22 @@
         <a style="float: right;" href="./posts/create" class="btn btn-primary">Create post</a>
     </h1>
     @if(count($posts) > 0)
-        @foreach($posts as $key => $val)
+        @foreach($posts as $key => $post)
             <ul class="unordered-list">
                 <li class="list-item">
-                    {{ ($key + 1) }}) {{ $val -> title }}
+                    {{ ($key + 1) }}) {{ $post -> title }}
                 </li>
 
                 <li class="list-item">
-                    {{ $val -> body }}
+                    {{ $post -> body }}
                 </li>
 
                 <li class="list-item">
-                    User: {{ ucfirst($val -> users) }}
+                    User: {{ ucfirst($post -> users) }}
                 </li>
 
                 <li class="list-item">
-                    Mail: {{ $val -> mail }}
+                    Mail: {{ $post -> mail }}
                 </li>
             </ul>
         @endforeach

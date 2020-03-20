@@ -36,9 +36,6 @@ class ItemController extends Controller
             $products = Item::all();
         }
 
-//        var_dump($products);
-//        die();
-
         return view('items.index', ['products' => $products]);
     }
 

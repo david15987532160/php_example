@@ -32,7 +32,25 @@ li a:hover:not(.active) {
 }
 
 .unordered-list {
+    color: #fff;
     border: 1px solid #111;
+
+    li {
+        padding: 5px 14px;
+    }
+
+    li a {
+        font-size: 24px;
+        display: block;
+        text-align: left;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        text-decoration: underline;
+        background-color: #0cadbd;
+
+    }
 }
 
 .list-item {
@@ -125,16 +143,41 @@ li a:hover:not(.active) {
     border-radius: .25rem;
 }
 
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
 }
 
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-delete {
+    font-size: 60px;
+    color: #979797;
+    display: flex;
+    align-items: center;
+}
+
 .btn:hover {
     transition: color .15s ease-in-out, background-color .15s ease-in-out,
     border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     background-color: #00abff;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 20px;
 }
 
 .pagination {
@@ -159,6 +202,30 @@ li a:hover:not(.active) {
     outline: none;
     border: none;
     position: relative;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin: 0;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
 }
 
 /*# sourceMappingURL=app.css.map */

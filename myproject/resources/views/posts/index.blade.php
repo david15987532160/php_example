@@ -9,7 +9,7 @@
         @foreach($posts as $key => $post)
             <ul class="unordered-list">
                 <li class="list-item">
-                    {{ ($key + 1) }}) {{ $post -> title }}
+                    <a href="/posts/{{ $post->id }}">{{ ($key + 1) }}) {{ $post -> title }}</a>
                 </li>
 
                 <li class="list-item">
@@ -22,6 +22,9 @@
 
                 <li class="list-item">
                     Mail: {{ $post -> mail }}
+                </li>
+                <li class="list-item">
+                    Posted on: {{ $post->created_at }}
                 </li>
             </ul>
         @endforeach

@@ -155,16 +155,21 @@ li a:hover:not(.active) {
   border-color: #dc3545;
 }
 
-.btn-delete {
-  font-size: 60px;
-  color: #979797;
+.btn-link {
+  font-weight: 400;
+  color: #007bff;
+  background-color: transparent;
+}
+
+.mb {
   display: flex;
   align-items: center;
+  margin-botton: 0px;
 }
 
 .btn:hover {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-color: #00abff;
+  background-color: #bfbfbf;
 }
 
 .button-container {

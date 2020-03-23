@@ -2,5 +2,5 @@
 
 @section('content')
     <h1>{{ $title }} About page</h1>
-    <p>BOUT BOUT BOUT</p>
+    <h3>Sponsored by <a href="https://laravel.com/">Laravel</a></h3>
 @endsection

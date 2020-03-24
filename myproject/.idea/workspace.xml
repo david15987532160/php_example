@@ -2,41 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5ba5729-ebc0-4fea-9403-ea47b7f4e48d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Category_Post.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/ide-helper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_24_065707_create_category_post_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/categories/show-post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f52b0f2-6306-4939-92bc-c5db48ec3dee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f52b0f2-6306-4939-92bc-c5db48ec3dee.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/WebLoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ItemType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ItemType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PostTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostTag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TagFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TagFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_20_044332_create_search_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_20_044332_create_search_items_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_23_064936_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_23_064936_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ItemTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ItemTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ItemTypeTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ItemTypeTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PostTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TagTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TagTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tags/show-post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tags/show-post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tags/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/items/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/items/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -318,7 +288,7 @@
       <workItem from="1584703172813" duration="318000" />
       <workItem from="1584929710173" duration="13709000" />
       <workItem from="1585012470093" duration="1101000" />
-      <workItem from="1585015150288" duration="25388000" />
+      <workItem from="1585015150288" duration="26448000" />
     </task>
     <servers />
   </component>

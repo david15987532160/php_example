@@ -19,7 +19,7 @@
         @foreach($products as $product)
             <ul class="unordered-list">
                 <li class="list-item">
-                    {{ $product->name }}
+                    <a>{{ $product->name }}</a>
                 </li>
             </ul>
         @endforeach

@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(ItemType::class, function (Faker $faker) {
     $array = array('Thuốc', 'Thực phẩm chức năng', 'Sản phẩm khác');
-    $name = $array[array_rand($array)];
+    $name = $faker->unique()->randomElement($array);
 
     return [
         'name' => $name,

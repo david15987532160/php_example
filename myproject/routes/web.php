@@ -11,14 +11,14 @@
 |
 */
 
-
-//Route::get('/ten/{name}', function ($name) {
-//    $name = strtoupper($name);
-//    return view('welcome', compact('name'));
-//});
-
+Route::get('/login', 'WebLoginController@login')->name('login');
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
+Route::get('/tag/{id}/posts', 'PostsController@getPostsByTag');
+Route::get('/category/{id}/posts', 'PostsController@getPostsByCategory');
+
 Route::resource('posts', 'PostsController');
 Route::resource('items', 'ItemController');
+
+Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');

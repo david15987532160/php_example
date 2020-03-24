@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ItemTableSeeder extends Seeder
+class TagTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class ItemTableSeeder extends Seeder
      */
     public function run()
     {
-//        factory(\App\Item::class, 5)->create();
+        factory(\App\Tag::class, 10)->create();
     }
 }

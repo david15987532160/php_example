@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category_Post;
+use App\Models\PostTag;
 use App\Post;
+use App\Tag;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
@@ -16,11 +18,19 @@ class PostsController extends Controller
      */
     public function index()
     {
-//        $posts = Post::all();
 //        $posts = DB::select(SELECT * FROM ('posts'));
-        $posts = Post::orderBy('created_at', 'desc')->paginate(2);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $array_tag = [];
+        $tags = [];
 
-        return view('posts.index', ['posts' => $posts]);
+        foreach ($posts as $post) {
+            array_push($array_tag, $this->getTagsByPost($post->id));
+        }
+        foreach ($array_tag as $array) {
+            array_push($tags, $array);
+        }
+
+        return view('posts.index', ['posts' => $posts, 'tags' => $tags]);
     }
 
     /**
@@ -43,7 +53,7 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'body' => 'required|max:10'
+            'body' => 'required|max:100'
         ]);
 
         // Create Post
@@ -65,7 +75,10 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::where('id', $id);
+        $post = Post::find($id);
+
+//        return view('posts.show', compact('post'));
+        return view('posts.show')->with('post', $post);
     }
 
     /**
@@ -76,7 +89,9 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -88,7 +103,19 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required|max:100'
+        ]);
+
+        // Edit Post
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->updated_at = Carbon::now();
+        $post->save();
+
+        return redirect('/posts')->with('success', 'Post updated');
     }
 
     /**
@@ -99,6 +126,62 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+
+        return redirect('/posts')->with('success', 'Post Deleted');
+    }
+
+    /**
+     * Get tags of specified Post
+     */
+    public function getTagsByPost($id)
+    {
+        if (!empty($id)) {
+            $tagIDs = PostTag::where('post_id', $id)->pluck('tag_id');
+            $tags = Tag::whereIn('id', $tagIDs)->get();
+        } else {
+            $posts = Post::all();
+            $tags = [];
+            foreach ($posts as $post) {
+                $tagIds = PostTag::where('post_id', $post->id)->pluck('tag_id');
+                array_push($tags, Tag::whereIn('id', $tagIds)->get());
+            }
+        }
+
+        return $tags;
+    }
+
+    /**
+     * Get posts of specified Tag
+     */
+    public function getPostsByTag($id)
+    {
+        if (!empty($id)) {
+            $postIDs = PostTag::where('tag_id', $id)->pluck('post_id');
+            $posts = Post::whereIn('id', $postIDs)->get();
+        } else {
+            $tags = Tag::all();
+            $posts = [];
+            foreach ($tags as $tag) {
+                $postIDs = PostTag::where('tag_id', $tag->id)->pluck('post_id');
+                array_push($posts, Post::whereIn('id', $postIDs)->get());
+            }
+        }
+
+        return view('tags.show-post', ['posts' => $posts]);
+    }
+
+    /**
+     * Get posts of specified Category
+     */
+    public function getPostsByCategory($id)
+    {
+        if (!empty($id)) {
+            $postIDs = Category_Post::where('category_id', $id)->pluck('post_id');
+            $posts = Post::whereIn('id', $postIDs)->get();
+
+            return view('categories.show-post', ['posts' => $posts]);
+        }
     }
 }

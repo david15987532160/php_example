@@ -132,10 +132,6 @@ nav {
   list-style-type: circle;
   background-color: #0CCCDC;
 }
-.list-item a:hover {
-  text-decoration: underline;
-  background-color: #0CCCDC;
-}
 
 .list-post {
   float: none;
@@ -314,6 +310,14 @@ nav {
 .card-body {
   flex: 1 1 auto;
   padding: 1.25rem;
+}
+
+.login-header {
+  text-align: center;
+}
+
+.login-form {
+  text-align: center;
 }
 
 /*# sourceMappingURL=app.css.map */

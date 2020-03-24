@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostTag extends Model
+class Category_Post extends Model
 {
-    protected $table = 'post_tag';
+    protected $table = 'category_post';
 
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'post_id', 'tag_id'
+        'category_id', 'post_id'
     ];
 }

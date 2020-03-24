@@ -1,11 +1,6 @@
 @extends('layout.app')
 
 @section('content')
-    <ul class="category-bar">
-        <li><a>Category a</a></li>
-        <li><a>Category b</a></li>
-        <li><a>Category c</a></li>
-    </ul>
     <h1>
         Posts
         <a style="float: right;" href="./posts/create" class="btn btn-primary">Create post</a>
@@ -20,9 +15,11 @@
                     </a>
                     @if (count($tags) > 0)
                         <div class="tag">
-                            <a href="tag/{{ $tags[$key][0]->id }}/posts" class="btn btn-tag">
-                                {{ $tags[$key][0]->name }}
-                            </a>
+                            @foreach($tags[$key] as $tag)
+                                <a href="tag/{{ $tag->id }}/posts" class="btn btn-tag">
+                                    {{ $tag->name }}
+                                </a>
+                            @endforeach
                         </div>
                     @endif
                 </li>

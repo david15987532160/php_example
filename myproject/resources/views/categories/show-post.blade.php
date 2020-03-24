@@ -4,7 +4,7 @@
     @if(count($posts) > 0)
         <div class="card">
             <div class="card-header button-container">
-                <h1>Posts by Tag</h1>
+                <h1>Posts by Category</h1>
             </div>
             <div class="card-body">
                 @foreach($posts as $post)

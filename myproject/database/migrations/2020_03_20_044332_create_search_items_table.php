@@ -23,7 +23,8 @@ class CreateSearchItemsTable extends Migration
             $table->string('image');
 
             $table->unsignedBigInteger('item_type_id');
-            $table->foreign('item_type_id')->references('id')->on('item_types')->onDelete('cascade');
+            $table->foreign('item_type_id')->references('id')
+                ->on('item_types')->onDelete('cascade');
 
             $table->unsignedBigInteger('in_stock')->nullable();
             $table->unsignedBigInteger('searched_times')->nullable();

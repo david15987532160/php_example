@@ -6,19 +6,22 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function home() {
+    public function home()
+    {
         $name = 'Quoc Anh';
 
         return view('pages.index')->with('name', $name);
     }
 
-    public function about() {
+    public function about()
+    {
         $title = "This is a ";
 
         return view('pages.about')->with('title', $title);
     }
 
-    public function services() {
+    public function services()
+    {
         $data = array(
             'title' => 'This is a Services page',
             'services' => ['Tư vấn toa thuốc', 'Tra cứu thuốc', 'Tra cứu bệnh',

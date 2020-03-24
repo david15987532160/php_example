@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category_Post;
 use App\Models\PostTag;
 use App\Post;
 use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
@@ -134,7 +133,7 @@ class PostsController extends Controller
     }
 
     /**
-     * Get tags of specified post
+     * Get tags of specified Post
      */
     public function getTagsByPost($id)
     {
@@ -154,7 +153,7 @@ class PostsController extends Controller
     }
 
     /**
-     * Get posts of specified tag
+     * Get posts of specified Tag
      */
     public function getPostsByTag($id)
     {
@@ -171,5 +170,18 @@ class PostsController extends Controller
         }
 
         return view('tags.show-post', ['posts' => $posts]);
+    }
+
+    /**
+     * Get posts of specified Category
+     */
+    public function getPostsByCategory($id)
+    {
+        if (!empty($id)) {
+            $postIDs = Category_Post::where('category_id', $id)->pluck('post_id');
+            $posts = Post::whereIn('id', $postIDs)->get();
+
+            return view('categories.show-post', ['posts' => $posts]);
+        }
     }
 }

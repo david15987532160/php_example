@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Category extends Model
 {
@@ -15,7 +15,8 @@ class Category extends Model
 
     public $timestamps = true;
 
-    public function posts(): HasMany {
-        return $this->hasMany(Post::class);
+    public function posts(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class, 'category_post', 'category_id', 'post_id');
     }
 }

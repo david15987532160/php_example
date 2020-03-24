@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PostTag;
 use App\Post;
+use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,11 +19,19 @@ class PostsController extends Controller
      */
     public function index()
     {
-//        $posts = Post::all();
 //        $posts = DB::select(SELECT * FROM ('posts'));
-        $posts = Post::orderBy('created_at', 'desc')->paginate(2);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $array_tag = [];
+        $tags = [];
 
-        return view('posts.index', ['posts' => $posts]);
+        foreach ($posts as $post) {
+            array_push($array_tag, $this->getTagsByPost($post->id));
+        }
+        foreach ($array_tag as $array) {
+            array_push($tags, $array);
+        }
+
+        return view('posts.index', ['posts' => $posts, 'tags' => $tags]);
     }
 
     /**
@@ -121,5 +131,45 @@ class PostsController extends Controller
         $post->delete();
 
         return redirect('/posts')->with('success', 'Post Deleted');
+    }
+
+    /**
+     * Get tags of specified post
+     */
+    public function getTagsByPost($id)
+    {
+        if (!empty($id)) {
+            $tagIDs = PostTag::where('post_id', $id)->pluck('tag_id');
+            $tags = Tag::whereIn('id', $tagIDs)->get();
+        } else {
+            $posts = Post::all();
+            $tags = [];
+            foreach ($posts as $post) {
+                $tagIds = PostTag::where('post_id', $post->id)->pluck('tag_id');
+                array_push($tags, Tag::whereIn('id', $tagIds)->get());
+            }
+        }
+
+        return $tags;
+    }
+
+    /**
+     * Get posts of specified tag
+     */
+    public function getPostsByTag($id)
+    {
+        if (!empty($id)) {
+            $postIDs = PostTag::where('tag_id', $id)->pluck('post_id');
+            $posts = Post::whereIn('id', $postIDs)->get();
+        } else {
+            $tags = Tag::all();
+            $posts = [];
+            foreach ($tags as $tag) {
+                $postIDs = PostTag::where('tag_id', $tag->id)->pluck('post_id');
+                array_push($posts, Post::whereIn('id', $postIDs)->get());
+            }
+        }
+
+        return view('tags.show-post', ['posts' => $posts]);
     }
 }

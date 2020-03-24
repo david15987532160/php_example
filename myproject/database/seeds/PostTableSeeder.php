@@ -17,7 +17,6 @@ class PostTableSeeder extends Seeder
         factory(\App\Tag::class, 5)->create();
         factory(\App\Post::class, 10)->create()->each(function ($a) {
             $a->tags()->attach(\App\Tag::all()->random(1));
-
         });
     }
 }

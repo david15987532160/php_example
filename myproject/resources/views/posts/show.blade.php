@@ -18,7 +18,7 @@
         </div>
 
         <div class="button-container">
-            <a href="javascript:history.back()" class="btn btn-link">Go back</a>
+            <a href="javascript:history.back()" class="btn btn-link">< Go back</a>
             <a href="/posts/{{ $post->id }}/edit" class="btn btn-link">Edit</a>
         </div>
     </div>

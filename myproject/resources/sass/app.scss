@@ -7,6 +7,10 @@ h1 {
     font-size: 30px;
 }
 
+span {
+    font-weight: bold;
+}
+
 ul {
     list-style-type: none;
     margin: 0 0 10px 0;
@@ -21,7 +25,7 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -31,15 +35,51 @@ li a:hover:not(.active) {
     background-color: #111;
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.category-bar {
+    display: flex;
+    background: none;
+    justify-content: flex-start;
+
+    li a {
+        display: block;
+        color: #000eff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    li a:hover {
+        text-decoration: underline;
+        background: none;
+    }
+}
+
 .unordered-list {
-    color: #fff;
+    color: #111;
     border: 1px solid #111;
 
     li {
         padding: 5px 14px;
+
+        .tag {
+            display: inline-block;
+
+            a {
+                font-size: 14px;
+                margin-right: 5.76px;
+                display: inline-block;
+            }
+        }
     }
 
     li a {
+        color: #111;
         font-size: 24px;
         display: block;
         text-align: left;
@@ -48,8 +88,7 @@ li a:hover:not(.active) {
 
     li a:hover {
         text-decoration: underline;
-        background-color: #0cadbd;
-
+        background-color: #d7d7d7;
     }
 }
 
@@ -57,11 +96,14 @@ li a:hover:not(.active) {
     float: none;
     padding: 5px;
     list-style-type: circle;
-    background-color: #0cadbd;
+    background-color: #0CCCDC;
+}
 
-    a:hover {
-        background-color: #0CCCDC;
-    }
+.list-post {
+    float: none;
+    padding: 5px;
+    list-style-type: circle;
+    background-color: #d7d7d7;
 }
 
 .active {
@@ -117,7 +159,7 @@ li a:hover:not(.active) {
 
 .form-control {
     display: block;
-    width: 50%;
+    width: 70%;
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
@@ -141,6 +183,11 @@ li a:hover:not(.active) {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
+}
+
+.btn-tag {
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #E8E8E8;
 }
 
 .btn-default {

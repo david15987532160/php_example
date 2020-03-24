@@ -1,6 +1,11 @@
 @extends('layout.app')
 
 @section('content')
+    <ul class="category-bar">
+        <li><a>Category a</a></li>
+        <li><a>Category b</a></li>
+        <li><a>Category c</a></li>
+    </ul>
     <h1>
         Posts
         <a style="float: right;" href="./posts/create" class="btn btn-primary">Create post</a>
@@ -8,22 +13,32 @@
     @if(count($posts) > 0)
         @foreach($posts as $key => $post)
             <ul class="unordered-list">
-                <li class="list-item">
-                    <a href="/posts/{{ $post->id }}">{{ ($key + 1) }}) {{ $post -> title }}</a>
+                <li class="list-post">
+                    <a href="/posts/{{ $post->id }}">
+                        {{ ($posts->perPage() * $posts->currentPage()) - ($posts->perPage()) + ($key + 1) }})
+                        {{ $post -> title }}
+                    </a>
+                    @if (count($tags) > 0)
+                        <div class="tag">
+                            <a href="tag/{{ $tags[$key][0]->id }}/posts" class="btn btn-tag">
+                                {{ $tags[$key][0]->name }}
+                            </a>
+                        </div>
+                    @endif
                 </li>
 
-                <li class="list-item">
+                <li class="list-post">
                     {{ $post -> body }}
                 </li>
 
-                <li class="list-item">
-                    User: {{ ucfirst($post -> users) }}
+                <li class="list-post">
+                    User: {{ ucfirst($post->users) }}
                 </li>
 
-                <li class="list-item">
-                    Mail: {{ $post -> mail }}
+                <li class="list-post">
+                    Mail: {{ $post->mail }}
                 </li>
-                <li class="list-item">
+                <li class="list-post">
                     Posted on: {{ $post->created_at }}
                 </li>
             </ul>

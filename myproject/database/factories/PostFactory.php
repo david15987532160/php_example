@@ -4,7 +4,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(\App\Post::class, function (Faker $faker) {
+$factory->define(\App\Models\Post::class, function (Faker $faker) {
     $user = $faker->userName;
 //    $categoryIDs = DB::table('categories')->pluck('id');
 

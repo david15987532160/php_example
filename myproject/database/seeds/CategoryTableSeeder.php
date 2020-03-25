@@ -11,8 +11,8 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Category::class, 10)->create()->each(function ($item) {
-            $item->posts()->attach(\App\Post::all()->random(rand(1, 5)));
+        factory(\App\Models\Category::class, 10)->create()->each(function ($item) {
+            $item->posts()->attach(\App\Models\Post::all()->random(rand(1, 5)));
         });
     }
 }

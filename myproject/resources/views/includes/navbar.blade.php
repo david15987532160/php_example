@@ -10,7 +10,7 @@
                 <li class="dropdown">
                     <a href="/posts" class="drop-btn">Posts</a>
                     <div class="dropdown-content">
-                        @foreach(\App\Category::all() as $category)
+                        @foreach(\App\Models\Category::all() as $category)
                             <a href="/category/{{ $category->id }}/posts">{{ $category->name }}</a>
                         @endforeach
                     </div>

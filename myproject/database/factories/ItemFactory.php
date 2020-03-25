@@ -5,7 +5,7 @@
 use App\Model;
 use Faker\Generator as FakerGenerator;
 
-$factory->define(\App\Item::class, function (FakerGenerator $faker) {
+$factory->define(\App\Models\Item::class, function (FakerGenerator $faker) {
     return [
         'name' => $faker->lexify('Thuốc ?????'),
         'item_type_id' => rand(1, 3),

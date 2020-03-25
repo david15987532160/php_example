@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Models\Category;
 use App\Models\CategoryPost;
 use App\Models\PostTag;
-use App\Post;
-use App\Tag;
+use App\Models\Post;
+use App\Models\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 

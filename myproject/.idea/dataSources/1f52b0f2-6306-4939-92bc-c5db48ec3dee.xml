@@ -1989,141 +1989,125 @@ tag_id</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="460" parent="346" name="category_id">
+    <column id="460" parent="346" name="created_at">
       <Position>6</Position>
-      <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="461" parent="346" name="created_at">
+    <column id="461" parent="346" name="updated_at">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="462" parent="346" name="updated_at">
+    <column id="462" parent="346" name="deleted_at">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="463" parent="346" name="deleted_at">
-      <Position>9</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="464" parent="346" name="posts_mail_unique">
+    <index id="463" parent="346" name="posts_mail_unique">
       <ColNames>mail</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="465" parent="346" name="posts_category_id_foreign">
-      <ColNames>category_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="466" parent="346" name="PRIMARY">
+    <key id="464" parent="346" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="467" parent="346" name="posts_mail_unique">
+    <key id="465" parent="346" name="posts_mail_unique">
       <ColNames>mail</ColNames>
       <UnderlyingIndexName>posts_mail_unique</UnderlyingIndexName>
     </key>
-    <foreign-key id="468" parent="346" name="posts_category_id_foreign">
-      <ColNames>category_id</ColNames>
-      <RefTableName>categories</RefTableName>
-      <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="469" parent="347" name="id">
+    <column id="466" parent="347" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="470" parent="347" name="name">
+    <column id="467" parent="347" name="name">
       <Position>2</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="471" parent="347" name="created_at">
+    <column id="468" parent="347" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="472" parent="347" name="updated_at">
+    <column id="469" parent="347" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="473" parent="347" name="deleted_at">
+    <column id="470" parent="347" name="deleted_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="474" parent="347" name="PRIMARY">
+    <key id="471" parent="347" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="475" parent="348" name="id">
+    <column id="472" parent="348" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="476" parent="348" name="name">
+    <column id="473" parent="348" name="name">
       <Position>2</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;aaa&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="477" parent="348" name="email">
+    <column id="474" parent="348" name="email">
       <Position>3</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="478" parent="348" name="email_verified_at">
+    <column id="475" parent="348" name="email_verified_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="479" parent="348" name="password">
+    <column id="476" parent="348" name="password">
       <Position>5</Position>
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="480" parent="348" name="remember_token">
+    <column id="477" parent="348" name="remember_token">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="481" parent="348" name="created_at">
+    <column id="478" parent="348" name="created_at">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="482" parent="348" name="updated_at">
+    <column id="479" parent="348" name="updated_at">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="483" parent="348" name="users_email_unique">
+    <index id="480" parent="348" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="484" parent="348" name="PRIMARY">
+    <key id="481" parent="348" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="485" parent="348" name="users_email_unique">
+    <key id="482" parent="348" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>

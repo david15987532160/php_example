@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Models\CategoryPost;
 use App\Models\PostTag;
 use App\Post;
@@ -14,29 +15,27 @@ class PostsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * //     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
-        $array_tag = [];
         $tags = [];
 
         foreach ($posts as $post) {
-            array_push($array_tag, $post->tags);
+            array_push($tags, $post->tags);
         }
 
-        foreach ($array_tag as $array) {
-            array_push($tags, $array);
-        }
-
-        return view('posts.index', ['posts' => $posts, 'tags' => $tags]);
+        return view('posts.index', [
+            'posts' => $posts,
+            'tags' => $tags
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * //     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -47,7 +46,7 @@ class PostsController extends Controller
      * Store a newly created resource in storage.x
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * //     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -62,6 +61,7 @@ class PostsController extends Controller
         $post->body = $request->input('body');
         $post->users = 'me';
         $post->mail = $post->users . rand(100, 999) . '@gmail.com';
+
         $post->save();
 
         return redirect('/posts')->with('success', 'Post Created');
@@ -71,13 +71,12 @@ class PostsController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * //     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $post = Post::find($id);
 
-//        return view('posts.show', compact('post'));
         return view('posts.show')->with('post', $post);
     }
 
@@ -85,7 +84,7 @@ class PostsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * //     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -99,7 +98,7 @@ class PostsController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * //     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
@@ -113,6 +112,7 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->updated_at = Carbon::now();
+
         $post->save();
 
         return redirect('/posts')->with('success', 'Post updated');
@@ -122,7 +122,7 @@ class PostsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * //     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
@@ -133,48 +133,36 @@ class PostsController extends Controller
     }
 
     /**
-     * Get tags of specified Post
-     */
-//    public function getTagsByPost($id)
-//    {
-//        if (!empty($id)) {
-//            $tagIDs = PostTag::where('post_id', $id)->pluck('tag_id');
-//            $tags = Tag::whereIn('id', $tagIDs)->get();
-//        } else {
-//            $posts = Post::all();
-//            $tags = [];
-//            foreach ($posts as $post) {
-//                $tagIds = PostTag::where('post_id', $post->id)->pluck('tag_id');
-//                array_push($tags, Tag::whereIn('id', $tagIds)->get());
-//            }
-//        }
-//
-//        return $tags;
-//    }
-
-    /**
-     * Get posts of specified Tag
+     * Get posts of specific Tag
+     * @param int $id
      */
     public function getPostsByTag($id)
     {
-        if (!empty($id)) {
+        $verifiedId = Tag::where('id', $id)->firstOrFail();
+        if (!empty($id) && $verifiedId) {
             $postIDs = PostTag::where('tag_id', $id)->pluck('post_id');
             $posts = Post::whereIn('id', $postIDs)->get();
 
-            return view('tags.show-post', ['posts' => $posts]);
+            return view('tags.show_post', [
+                'posts' => $posts
+            ]);
         }
     }
 
     /**
-     * Get posts of specified Category
+     * Get posts of specific Category
+     * @param int $id
      */
     public function getPostsByCategory($id)
     {
-        if (!empty($id)) {
+        $verifiedId = Category::where('id', $id)->firstOrFail();
+        if (!empty($id) && $verifiedId) {
             $postIDs = CategoryPost::where('category_id', $id)->pluck('post_id');
             $posts = Post::whereIn('id', $postIDs)->get();
 
-            return view('categories.show-post', ['posts' => $posts]);
+            return view('categories.show_post', [
+                'posts' => $posts
+            ]);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category_Post;
+use App\Models\CategoryPost;
 use App\Models\PostTag;
 use App\Post;
 use App\Tag;
@@ -18,14 +18,14 @@ class PostsController extends Controller
      */
     public function index()
     {
-//        $posts = DB::select(SELECT * FROM ('posts'));
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         $array_tag = [];
         $tags = [];
 
         foreach ($posts as $post) {
-            array_push($array_tag, $this->getTagsByPost($post->id));
+            array_push($array_tag, $post->tags);
         }
+
         foreach ($array_tag as $array) {
             array_push($tags, $array);
         }
@@ -135,22 +135,22 @@ class PostsController extends Controller
     /**
      * Get tags of specified Post
      */
-    public function getTagsByPost($id)
-    {
-        if (!empty($id)) {
-            $tagIDs = PostTag::where('post_id', $id)->pluck('tag_id');
-            $tags = Tag::whereIn('id', $tagIDs)->get();
-        } else {
-            $posts = Post::all();
-            $tags = [];
-            foreach ($posts as $post) {
-                $tagIds = PostTag::where('post_id', $post->id)->pluck('tag_id');
-                array_push($tags, Tag::whereIn('id', $tagIds)->get());
-            }
-        }
-
-        return $tags;
-    }
+//    public function getTagsByPost($id)
+//    {
+//        if (!empty($id)) {
+//            $tagIDs = PostTag::where('post_id', $id)->pluck('tag_id');
+//            $tags = Tag::whereIn('id', $tagIDs)->get();
+//        } else {
+//            $posts = Post::all();
+//            $tags = [];
+//            foreach ($posts as $post) {
+//                $tagIds = PostTag::where('post_id', $post->id)->pluck('tag_id');
+//                array_push($tags, Tag::whereIn('id', $tagIds)->get());
+//            }
+//        }
+//
+//        return $tags;
+//    }
 
     /**
      * Get posts of specified Tag
@@ -160,16 +160,9 @@ class PostsController extends Controller
         if (!empty($id)) {
             $postIDs = PostTag::where('tag_id', $id)->pluck('post_id');
             $posts = Post::whereIn('id', $postIDs)->get();
-        } else {
-            $tags = Tag::all();
-            $posts = [];
-            foreach ($tags as $tag) {
-                $postIDs = PostTag::where('tag_id', $tag->id)->pluck('post_id');
-                array_push($posts, Post::whereIn('id', $postIDs)->get());
-            }
-        }
 
-        return view('tags.show-post', ['posts' => $posts]);
+            return view('tags.show-post', ['posts' => $posts]);
+        }
     }
 
     /**
@@ -178,7 +171,7 @@ class PostsController extends Controller
     public function getPostsByCategory($id)
     {
         if (!empty($id)) {
-            $postIDs = Category_Post::where('category_id', $id)->pluck('post_id');
+            $postIDs = CategoryPost::where('category_id', $id)->pluck('post_id');
             $posts = Post::whereIn('id', $postIDs)->get();
 
             return view('categories.show-post', ['posts' => $posts]);

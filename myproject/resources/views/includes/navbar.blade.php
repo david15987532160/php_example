@@ -1,17 +1,52 @@
 <ul>
     <div class="container">
-        <li><a href="/">Home</a></li>
-        <li class="dropdown">
-            <a href="/posts" class="drop-btn">Posts</a>
-            <div class="dropdown-content">
-                @foreach(\App\Category::all() as $category)
-                    <a href="/category/{{ $category->id }}/posts">{{ $category->name }}</a>
-                @endforeach
-            </div>
-        </li>
-        <li><a href="/items">Products</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li style="float: right;"><a href="/login">Login</a></li>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/posts" class="drop-btn">Posts</a>
+                    <div class="dropdown-content">
+                        @foreach(\App\Category::all() as $category)
+                            <a href="/category/{{ $category->id }}/posts">{{ $category->name }}</a>
+                        @endforeach
+                    </div>
+                </li>
+                <li><a href="/items">Products</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <!-- Authentication Links -->
+                @guest
+                    <li style="float: right;" class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li style="float: right;" class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <li style="float: right" class="dropdown">
+                        <a class="drop-btn">
+                            {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+            </ul>
+        </div>
     </div>
 </ul>

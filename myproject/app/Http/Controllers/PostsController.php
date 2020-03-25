@@ -15,11 +15,11 @@ class PostsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * //     * @return \Illuminate\Http\Response
+     ** @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::latest()->paginate(5);
         $tags = [];
 
         foreach ($posts as $post) {
@@ -35,7 +35,7 @@ class PostsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * //     * @return \Illuminate\Http\Response
+     ** @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -46,13 +46,13 @@ class PostsController extends Controller
      * Store a newly created resource in storage.x
      *
      * @param \Illuminate\Http\Request $request
-     * //     * @return \Illuminate\Http\Response
+     ** @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
             'title' => 'required',
-            'body' => 'required|max:100'
+            'body' => 'required|max:255'
         ]);
 
         // Create Post
@@ -71,7 +71,7 @@ class PostsController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * //     * @return \Illuminate\Http\Response
+     ** @return \Illuminate\Http\Response
      */
     public function show($id)
     {
@@ -84,7 +84,7 @@ class PostsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * //     * @return \Illuminate\Http\Response
+     ** @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -98,13 +98,13 @@ class PostsController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * //     * @return \Illuminate\Http\Response
+     ** @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
             'title' => 'required',
-            'body' => 'required|max:100'
+            'body' => 'required|max:255'
         ]);
 
         // Edit Post
@@ -122,7 +122,7 @@ class PostsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * //     * @return \Illuminate\Http\Response
+     ** @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -41,5 +42,11 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+        $credentials = $request->only('email', 'password');
+//        echo 'aaa';
+        if (!Auth::attempt($credentials)) {
+            abort(401, 'Unauthorized');
+        }
+        return view('home');
     }
 }

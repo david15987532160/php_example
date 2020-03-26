@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\CategoryPost;
 use App\Models\PostTag;
@@ -19,16 +20,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->paginate(5);
-        $tags = [];
-
-        foreach ($posts as $post) {
-            array_push($tags, $post->tags);
-        }
+        $posts = Post::with('tags')->latest()->paginate(5);
 
         return view('posts.index', [
             'posts' => $posts,
-            'tags' => $tags
         ]);
     }
 
@@ -138,13 +133,10 @@ class PostsController extends Controller
      */
     public function getPostsByTag($id)
     {
-        $verifiedId = Tag::where('id', $id)->firstOrFail();
-        if (!empty($id) && $verifiedId) {
-            $postIDs = PostTag::where('tag_id', $id)->pluck('post_id');
-            $posts = Post::whereIn('id', $postIDs)->get();
-
+        $tag = Tag::findOrFail($id);
+        if (!(empty($id) && empty($tag))) {
             return view('tags.show_post', [
-                'posts' => $posts
+                'posts' => $tag->posts,
             ]);
         }
     }
@@ -155,13 +147,10 @@ class PostsController extends Controller
      */
     public function getPostsByCategory($id)
     {
-        $verifiedId = Category::where('id', $id)->firstOrFail();
-        if (!empty($id) && $verifiedId) {
-            $postIDs = CategoryPost::where('category_id', $id)->pluck('post_id');
-            $posts = Post::whereIn('id', $postIDs)->get();
-
+        $category = Category::findOrFail($id);
+        if (!(empty($id) && empty($category))) {
             return view('categories.show_post', [
-                'posts' => $posts
+                'posts' => $category->posts,
             ]);
         }
     }

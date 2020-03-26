@@ -13,9 +13,9 @@
                         {{ ($posts->perPage() * $posts->currentPage()) - ($posts->perPage()) + ($key + 1) }})
                         {{ $post -> title }}
                     </a>
-                    @if (count($tags) > 0)
+                    @if (count($post->tags) > 0)
                         <div class="tag">
-                            @foreach($tags[$key] as $tag)
+                            @foreach($post->tags as $tag)
                                 <a href="tag/{{ $tag->id }}/posts" class="btn btn-tag">
                                     {{ $tag->name }}
                                 </a>

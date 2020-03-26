@@ -22,13 +22,15 @@ class Post extends Model
         'title', 'body', 'users'
     ];
 
-    public function category(): BelongsToMany
+    public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class, 'category_post', 'post_id', 'category_id');
+        return $this->belongsToMany(Category::class)
+            ->withPivot('id');
     }
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id');
+        return $this->belongsToMany(Tag::class)
+            ->withPivot('id');
     }
 }

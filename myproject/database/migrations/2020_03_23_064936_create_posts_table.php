@@ -17,8 +17,8 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->longText('body');
-            $table->string('users');
-            $table->string('mail')->unique();
+            $table->string('users')->nullable()->default('me');
+            $table->string('mail')->nullable()->default('me' . rand(100, 999) . '@gmail.com');
 
             $table->timestamps();
             $table->softDeletes();

@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+/**
+ * @property mixed posts
+ */
 class Tag extends Model
 {
     protected $table = 'tags';

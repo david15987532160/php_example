@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * @method static create(array $validate)
+ * @property mixed id
  */
 class Post extends Model
 {

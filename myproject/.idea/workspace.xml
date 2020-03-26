@@ -7,8 +7,9 @@
       <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_23_064936_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_23_064936_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/includes/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" xdebug_force_break_when_no_path_mapping="false" xdebug_force_break_when_outside_project="false" />
+  <component name="PhpDebugGeneral" xdebug_force_break_when_no_path_mapping="false" xdebug_force_break_when_outside_project="false" />
   <component name="PhpServers">
     <servers>
       <server host="127.0.0.1" id="3703ec4a-88a1-4a18-ad33-e04c4971003a" name="127.0.0.1" port="8000" />
@@ -289,7 +290,7 @@
       <workItem from="1585102205912" duration="3198000" />
       <workItem from="1585105677506" duration="19649000" />
       <workItem from="1585134594159" duration="3302000" />
-      <workItem from="1585188148366" duration="16093000" />
+      <workItem from="1585188148366" duration="22779000" />
     </task>
     <servers />
   </component>
@@ -329,10 +330,10 @@
     <state x="733" y="196" key="#com.intellij.ide.macro.MacrosDialog/73.23.1847.1057@73.23.1847.1057" timestamp="1584499507613" />
     <state x="735" y="196" key="#com.intellij.ide.macro.MacrosDialog/76.23.1844.1057@76.23.1844.1057" timestamp="1583396041686" />
     <state x="736" y="196" key="#com.intellij.ide.macro.MacrosDialog/78.23.1842.1057@78.23.1842.1057" timestamp="1583232892723" />
-    <state x="703" y="82" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1585109002400">
+    <state x="703" y="82" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1585214451642">
       <screen x="75" y="23" width="1845" height="1057" />
     </state>
-    <state x="703" y="82" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/75.23.1845.1057@75.23.1845.1057" timestamp="1585109002400" />
+    <state x="703" y="82" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/75.23.1845.1057@75.23.1845.1057" timestamp="1585214451642" />
     <state x="764" y="403" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1" timestamp="1585188753101">
       <screen x="75" y="23" width="1845" height="1057" />
     </state>

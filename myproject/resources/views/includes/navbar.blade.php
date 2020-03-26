@@ -11,7 +11,7 @@
                     <a href="/posts" class="drop-btn">Posts</a>
                     <div class="dropdown-content">
                         @foreach(\App\Models\Category::all() as $category)
-                            <a href="/category/{{ $category->id }}/posts">{{ $category->name }}</a>
+                            <a href="{{ $category->path() }}">{{ $category->name }}</a>
                         @endforeach
                     </div>
                 </li>

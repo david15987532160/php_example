@@ -18,6 +18,11 @@ class Tag extends Model
 
     public $timestamps = true;
 
+    public function path()
+    {
+        return route('tags.show_post', $this);
+    }
+
     public function posts(): BelongsToMany
     {
         return $this->belongsToMany(Post::class)->using('App\Models\PostTag')

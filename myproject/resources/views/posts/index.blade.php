@@ -16,7 +16,7 @@
                     @if (count($post->tags) > 0)
                         <div class="tag">
                             @foreach($post->tags as $tag)
-                                <a href="tag/{{ $tag->id }}/posts" class="btn btn-tag">
+                                <a href="{{ $tag->path() }}" class="btn btn-tag">
                                     {{ $tag->name }}
                                 </a>
                             @endforeach

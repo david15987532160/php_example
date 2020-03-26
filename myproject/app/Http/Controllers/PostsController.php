@@ -33,7 +33,9 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create', [
+            'tags' => Tag::all()->pluck('name'),
+        ]);
     }
 
     /**
@@ -49,7 +51,10 @@ class PostsController extends Controller
             'title' => 'required',
             'body' => 'required|max:255',
             'mail' => 'me' . rand(100, 999) . '@gmail.com',
-        ]));
+            'tags' => 'exists:tags,id'
+        ]))
+            ->tags()
+            ->attach($request->input('tags'));
 
         return redirect('/posts')->with('success', 'Post Created');
     }
@@ -94,7 +99,7 @@ class PostsController extends Controller
             'updated_at' => Carbon::now(),
         ]));
 
-        return redirect('/posts')->with('success', 'Post updated');
+        return redirect('/posts/' . $post->id)->with('success', 'Post updated');
     }
 
     /**

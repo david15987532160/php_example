@@ -12,6 +12,10 @@
         {{ Form::label('body', 'Body') }}
         {{ Form::textarea('body', '', ['class' => 'form-control', 'placeholder' => 'Body text', 'required']) }}
     </div>
+    <div class="form-group">
+        {{ Form::label('tags', 'Tags') }}
+        {{ Form::select('tags[]', $tags, '', ['class' => 'form-control', 'multiple']) }}
+    </div>
     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
     {!! Form::close() !!}
 @endsection

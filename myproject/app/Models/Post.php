@@ -24,13 +24,13 @@ class Post extends Model
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class)
+        return $this->belongsToMany(Category::class)->using('App\Models\CategoryPost')
             ->withPivot('id');
     }
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class)
+        return $this->belongsToMany(Tag::class)->using('App\Models\PostTag')
             ->withPivot('id');
     }
 }

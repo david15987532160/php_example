@@ -6,6 +6,9 @@ use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+/**
+ * @property mixed posts
+ */
 class Category extends Model
 {
     protected $table = 'categories';

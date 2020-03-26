@@ -15,8 +15,8 @@ Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 
-Route::get('/tag/{id}/posts', 'PostsController@getPostsByTag');
-Route::get('/category/{id}/posts', 'PostsController@getPostsByCategory');
+Route::get('/tag/{tagId}/posts', 'PostsController@getPostsByTag');
+Route::get('/category/{categoryId}/posts', 'PostsController@getPostsByCategory');
 
 Route::resource('posts', 'PostsController');
 Route::resource('items', 'ItemController');

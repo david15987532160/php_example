@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Category;
-use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+/**
+ * @method static create(array $validate)
+ */
 class Post extends Model
 {
     // Table Name
@@ -15,11 +16,9 @@ class Post extends Model
     protected $primaryKey = 'id';
     // TimeStamps
     public $timestamps = true;
-    // Guard user mail (blacklist)
-    protected $guarded = 'mail';
     // Whitelist
     protected $fillable = [
-        'title', 'body', 'users'
+        'title', 'body', 'users', 'mail'
     ];
 
     public function categories(): BelongsToMany

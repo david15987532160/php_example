@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\CategoryPost;
-use App\Models\PostTag;
 use App\Models\Post;
 use App\Models\Tag;
 use Carbon\Carbon;
+use Exception;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 
 class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     ** @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -29,8 +30,6 @@ class PostsController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     ** @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -40,24 +39,17 @@ class PostsController extends Controller
     /**
      * Store a newly created resource in storage.x
      *
-     * @param \Illuminate\Http\Request $request
-     ** @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse|Redirector
+     * @throws ValidationException
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        Post::create($this->validate($request, [
             'title' => 'required',
-            'body' => 'required|max:255'
-        ]);
-
-        // Create Post
-        $post = new Post;
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $post->users = 'me';
-        $post->mail = $post->users . rand(100, 999) . '@gmail.com';
-
-        $post->save();
+            'body' => 'required|max:255',
+            'mail' => 'me' . rand(100, 999) . '@gmail.com',
+        ]));
 
         return redirect('/posts')->with('success', 'Post Created');
     }
@@ -65,25 +57,23 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     ** @return \Illuminate\Http\Response
+     **
+     * @param Post $post
+     * @return Factory|View
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::find($id);
-
         return view('posts.show')->with('post', $post);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     ** @return \Illuminate\Http\Response
+     * @param Post $post
+     * @return Factory|View
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        $post = Post::find($id);
 
         return view('posts.edit')->with('post', $post);
     }
@@ -91,24 +81,18 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     ** @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Post $post
+     * @return RedirectResponse|Redirector
+     * @throws ValidationException
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        $this->validate($request, [
+        $post->update($this->validate($request, [
             'title' => 'required',
-            'body' => 'required|max:255'
-        ]);
-
-        // Edit Post
-        $post = Post::find($id);
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $post->updated_at = Carbon::now();
-
-        $post->save();
+            'body' => 'required|max:255',
+            'updated_at' => Carbon::now(),
+        ]));
 
         return redirect('/posts')->with('success', 'Post updated');
     }
@@ -116,41 +100,40 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     ** @return \Illuminate\Http\Response
+     * @param Post $post
+     * @return RedirectResponse|Redirector
+     * @throws Exception
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        $post = Post::find($id);
         $post->delete();
-
         return redirect('/posts')->with('success', 'Post Deleted');
     }
 
     /**
      * Get posts of specific Tag
-     * @param int $id
+     * @param Tag $tagId
+     * @return Factory|View
      */
-    public function getPostsByTag($id)
+    public function getPostsByTag(Tag $tagId)
     {
-        $tag = Tag::findOrFail($id);
-        if (!(empty($id) && empty($tag))) {
+        if (!empty($tagId)) {
             return view('tags.show_post', [
-                'posts' => $tag->posts,
+                'posts' => $tagId->posts,
             ]);
         }
     }
 
     /**
      * Get posts of specific Category
-     * @param int $id
+     * @param Category $categoryId
+     * @return Factory|View
      */
-    public function getPostsByCategory($id)
+    public function getPostsByCategory(Category $categoryId)
     {
-        $category = Category::findOrFail($id);
-        if (!(empty($id) && empty($category))) {
+        if (!empty($categoryId)) {
             return view('categories.show_post', [
-                'posts' => $category->posts,
+                'posts' => $categoryId->posts,
             ]);
         }
     }

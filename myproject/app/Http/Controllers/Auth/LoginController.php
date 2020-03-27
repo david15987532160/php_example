@@ -43,10 +43,14 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-//        echo 'aaa';
-        if (!Auth::attempt($credentials)) {
+        if (!auth()->attempt($credentials)) {
             abort(401, 'Unauthorized');
         }
-        return view('home');
+
+        if (session('redirect_url')) {
+            return redirect(session('redirect_url'));
+        } else {
+            return view('home');
+        }
     }
 }

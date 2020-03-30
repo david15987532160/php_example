@@ -2,10 +2,8 @@
     <div class="container">
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-
-            <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
+                <!-- Left Side Of Navbar -->
                 <li><a href="/">Home</a></li>
                 <li class="dropdown">
                     <a href="/posts" class="drop-btn">Posts</a>
@@ -18,6 +16,8 @@
                 <li><a href="/items">Products</a></li>
                 <li><a href="/services">Services</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact us</a></li>
+                <!-- Right Side Of Navbar -->
                 <!-- Authentication Links -->
                 @guest
                     <li style="float: right;" class="nav-item">

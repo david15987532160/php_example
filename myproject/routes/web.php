@@ -14,6 +14,8 @@
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
+Route::get('/contact', 'PagesController@showContact');
+Route::post('/contact', 'PagesController@storeContact');
 
 Route::get('/tag/{tagId}/posts', 'PostsController@getPostsByTag')->name('tags.show_post');
 Route::get('/category/{categoryId}/posts', 'PostsController@getPostsByCategory')->name('categories.show_post');

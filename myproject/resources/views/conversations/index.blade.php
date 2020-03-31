@@ -12,6 +12,9 @@
                         {{ $conversation->title }}
                     </a>
                 </li>
+                <li class="list-post">
+                    Posted by: {{ $conversation->user->name }}
+                </li>
             </ul>
         @endforeach
     @else

@@ -17,10 +17,13 @@ class CreateConversationsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('body');
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('best_reply_id');
+
+            $table->unsignedBigInteger('best_reply_id')->nullable();
+
             $table->timestamps();
             $table->softDeletes();
         });

@@ -6,11 +6,10 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Models\Post::class, function (Faker $faker) {
     $user = $faker->userName;
-//    $categoryIDs = DB::table('categories')->pluck('id');
 
     return [
         'title' => $faker->sentence,
-        'body' => $faker->text,
+        'body' => $faker->paragraph(8),
         'users' => ucfirst($user),
         'mail' => $user . '@gmail.com',
     ];

@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Conversation;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
@@ -14,6 +17,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Models\Conversation' => 'App\Policies\ConversationPolicy'
     ];
 
     /**
@@ -25,5 +29,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         Passport::routes();
+
+//        Gate::define('update', function (User $user, Conversation $conversation) {
+//            return $conversation->user->is($user);
+//        });
     }
 }

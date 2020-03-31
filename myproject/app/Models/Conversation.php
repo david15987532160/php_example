@@ -28,4 +28,10 @@ class Conversation extends Model
     {
         return $this->hasMany(Reply::class, 'conversation_id');
     }
+
+    public function setBestReply(Reply $reply)
+    {
+        $this->best_reply_id = $reply->id;
+        $this->save();
+    }
 }

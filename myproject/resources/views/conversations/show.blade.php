@@ -13,15 +13,35 @@
             <hr>
             @if(count($conversation->replies) > 0)
                 @foreach($conversation->replies as $reply)
-                    <div>
-                        <b>{{ $reply->user->name }} said...</b>
-                    </div>
-                    <div>
-                        {{ $reply->body }}
-                    </div>
-                    @if(count($conversation->replies) > 1)
-                        <br>
-                    @endif
+                    <header style="display: flex; justify-content: space-between;">
+                        <div>
+                            <b>{{ $reply->user->name }} said...</b>
+                        </div>
+                        @if($reply->isBest())
+                            <span style="color: #1e7e34">Best reply!!!</span>
+                        @endif
+                    </header>
+
+                    {{ $reply->body }}
+
+                    @if(!($loop->last))<br>@endif
+
+                    @can('update', $conversation)
+                        <form
+                            action="/best-replies/{{ $reply->id }}"
+                            method="POST"
+                        >
+                            @csrf
+
+                            <button
+                                type="submit"
+                                class="btn btn-link"
+                            >Best Reply?
+                            </button>
+                        </form>
+                    @endcan
+
+                    @if(!($loop->last))<br>@endif
                 @endforeach
             @else
                 No reply for this conversation

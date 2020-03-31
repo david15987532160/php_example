@@ -43,7 +43,7 @@ class PostsController extends Controller
      *
      * @param Request $request
      * @return RedirectResponse|Redirector
-     * @throws ValidationException
+     * ``@throws ValidationException
      */
     public function store(Request $request)
     {

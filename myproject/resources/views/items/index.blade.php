@@ -8,10 +8,10 @@
             method="GET">
             <div class="input-group">
                 <input
-                    @if(!empty($_GET['key_search']))
-                    value="{{ $_GET['key_search'] }}"
+                    @if(!empty($_GET['search_key']))
+                    value="{{ $_GET['search_key'] }}"
                     @endif
-                    name="key_search"
+                    name="search_key"
                     class="form-control"
                     placeholder="Tìm kiếm trên Phanolink">
                 <span>

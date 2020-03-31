@@ -10,8 +10,7 @@ $factory->define(Conversation::class, function (Faker $faker) {
 
     return [
         'title' => $faker->sentence,
-        'body' => $faker->text,
+        'body' => $faker->paragraph(8),
         'user_id' => $faker->randomElement($userIds),
-        'best_reply_id' => '1'
     ];
 });

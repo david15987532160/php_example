@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Models\Conversation;
+use App\Models\Reply;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -36,4 +39,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function conversations(): HasMany
+    {
+        return $this->hasMany(Conversation::class, 'user_id');
+    }
+
+    public function replies(): HasMany
+    {
+        return $this->hasMany(Reply::class, 'user_id');
+    }
 }

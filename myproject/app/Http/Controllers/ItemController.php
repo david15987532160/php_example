@@ -15,11 +15,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-//        $products = Item::where('item_type_id', 2)->get();
-
-        if (!empty($_GET['key_search'])) {
-            $terms = explode(" ", $_GET['key_search']);
-
+        if (request()->input('key_search')) {
+            $terms = explode(" ", request()->input('key_search'));
             $products = Item::query()
 //            ->whereHas('items', function ($query) use ($terms) {
 //                foreach ($terms as $term) {
@@ -58,7 +55,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        var_dump('aaa');
     }
 
     /**

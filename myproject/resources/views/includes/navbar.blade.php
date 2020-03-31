@@ -14,7 +14,7 @@
                     </div>
                 </li>
                 <li><a href="/items">Products</a></li>
-                <li><a href="/services">Services</a></li>
+                <li><a href="/conversations">Services</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact us</a></li>
                 <!-- Right Side Of Navbar -->

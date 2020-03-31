@@ -3,13 +3,19 @@
 @section('content')
     <h1>Products</h1>
     <div class="bottom-header">
-        <form action="/items" method="GET">
+        <form
+            action="/items"
+            method="GET">
             <div class="input-group">
-                <input value="" name="key_search" class="form-control"
-                       placeholder="Tìm kiếm trên Canolink">
-
+                <input
+                    @if(!empty($_GET['key_search']))
+                    value="{{ $_GET['key_search'] }}"
+                    @endif
+                    name="key_search"
+                    class="form-control"
+                    placeholder="Tìm kiếm trên Phanolink">
                 <span>
-                    <button class="btn btn-secondary" type="submit" value="">Search</button>
+                    <button class="btn btn-secondary" type="submit">Search</button>
                 </span>
             </div>
         </form>

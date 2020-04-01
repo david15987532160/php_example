@@ -9,7 +9,7 @@ class ConversationsController extends Controller
     public function index()
     {
         return view('conversations.index', [
-            'conversations' => Conversation::with('replies')->get(),
+            'conversations' => Conversation::with('replies')->latest()->get(),
         ]);
     }
 

@@ -15,6 +15,16 @@
                 <li class="list-post">
                     Posted by: {{ $conversation->user->name }}
                 </li>
+                <li class="list-post">
+                    Role(s):
+                    <div class="tag">
+                        @foreach($conversation->user->roles as $role)
+                            <a class="btn btn-tag">
+                                {{ $role->name }}
+                            </a>
+                        @endforeach
+                    </div>
+                </li>
             </ul>
         @endforeach
     @else

@@ -13,7 +13,7 @@ class UserTableSeeder extends Seeder
     {
         factory(\App\User::class, 10)->create()
             ->each(function ($user) {
-                $user->roles()->attach(\App\Models\Role::all()->random(1));
+                $user->roles()->attach(\App\Models\Role::all()->random(rand(1, 2)));
             });
     }
 }

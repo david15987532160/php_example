@@ -4,11 +4,11 @@
     <h1>Conversations</h1>
 
     @if(count($conversations) > 0)
-        @foreach($conversations as $conversation)
+        @foreach($conversations as $key => $conversation)
             <ul class="unordered-list">
                 <li class="list-post">
                     <a href="{{ route('conversations.show', $conversation->id) }}">
-                        {{ ($conversation->id) }})
+                        {{ ($key + 1) }})
                         {{ $conversation->title }}
                     </a>
                 </li>

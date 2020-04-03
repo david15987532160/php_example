@@ -10,6 +10,7 @@
             <ul class="unordered-list">
                 <li class="list-post">
                     <a href="/posts/{{ $post->id }}">
+                        {{ session(['links' => request()->path()]) }}
                         {{ ($posts->perPage() * $posts->currentPage()) - ($posts->perPage()) + ($key + 1) }})
                         {{ $post -> title }}
                     </a>

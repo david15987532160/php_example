@@ -6,11 +6,13 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Models\Post::class, function (Faker $faker) {
     $user = $faker->userName;
+    $items = \App\Models\Item::all()->pluck('id');
 
     return [
         'title' => $faker->sentence,
         'body' => $faker->paragraph(8),
         'users' => ucfirst($user),
         'mail' => $user . '@gmail.com',
+        'item_id' => $faker->randomElement($items)
     ];
 });

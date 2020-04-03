@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * @method static create(array $validate)
@@ -32,5 +34,10 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class)->using('App\Models\PostTag')
             ->withPivot('id');
+    }
+
+    public function item(): BelongsTo
+    {
+        return $this->belongsTo(Item::class);
     }
 }

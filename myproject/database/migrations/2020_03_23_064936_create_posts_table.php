@@ -20,6 +20,10 @@ class CreatePostsTable extends Migration
             $table->string('users')->nullable()->default('me');
             $table->string('mail')->nullable()->default('me' . rand(100, 999) . '@gmail.com');
 
+            $table->unsignedBigInteger('item_id')->nullable();
+            $table->foreign('item_id')->references('id')
+                ->on('items')->onDelete('cascade');
+
             $table->timestamps();
             $table->softDeletes();
         });

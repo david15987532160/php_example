@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\KeyWord;
-use Defuse\Crypto\Key;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
+use App\Enums\ItemStatus;
 
 class ItemController extends Controller
 {
@@ -78,12 +78,16 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     * @return Response
+     * @param Item $item
+     * @return Factory|View
      */
-    public function show($id)
+    public function show(Item $item)
     {
-        //
+        $status = ItemStatus::getKey($item->status);
+        return view('items.show')->with([
+            'item' => $item,
+            'status' => $status,
+        ]);
     }
 
     /**

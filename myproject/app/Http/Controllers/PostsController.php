@@ -111,8 +111,10 @@ class PostsController extends Controller
      */
     public function destroy(Post $post)
     {
+        $links = session()->has('links') ? session('links') : [];
         $post->delete();
-        return redirect('/posts')->with('success', 'Post Deleted');
+
+        return redirect($links)->with('success', 'Post Deleted');
     }
 
     /**

@@ -1,7 +1,9 @@
 @extends('layout.app')
 
 @section('content')
-    <h1>Conversations</h1>
+    <h1>
+        {{ count($conversations) }} Conversations
+    </h1>
 
     @if(count($conversations) > 0)
         @foreach($conversations as $key => $conversation)

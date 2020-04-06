@@ -16,7 +16,7 @@ class CreateSearchItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('name');
+            $table->string('name')->index();
             $table->mediumText('description');
             $table->unsignedDecimal('unit_price')->default(0);
             $table->unsignedDecimal('promotion_price')->default(0);

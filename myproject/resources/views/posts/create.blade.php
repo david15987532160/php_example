@@ -21,6 +21,6 @@
         {!! Form::close() !!}
     @else
         {{ session(['redirect_url' => 'posts/create']) }}
-        <a href="/login">You are not logged in</a>
+        <a href="/login">You are not log in! Log in now?</a>
     @endauth
 @endsection

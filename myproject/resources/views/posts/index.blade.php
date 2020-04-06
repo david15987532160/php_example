@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>
-        Posts
+        {{ $posts->total() }} Posts
         <a style="float: right;" href="./posts/create" class="btn btn-primary">Create post</a>
     </h1>
     @if(count($posts) > 0)
@@ -10,6 +10,7 @@
             <ul class="unordered-list">
                 <li class="list-post">
                     <a href="/posts/{{ $post->id }}">
+                        {{--For rollback after delete post--}}
                         {{ session(['links' => request()->path()]) }}
                         {{ ($posts->perPage() * $posts->currentPage()) - ($posts->perPage()) + ($key + 1) }})
                         {{ $post -> title }}

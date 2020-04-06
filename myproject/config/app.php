@@ -177,6 +177,7 @@ return [
         Laravel\Passport\PassportServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         BenSampo\Enum\EnumServiceProvider::class,
+        willvincent\Rateable\RateableServiceProvider::class,
     ],
 
     /*

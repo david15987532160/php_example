@@ -22,18 +22,18 @@ class ItemController extends Controller
         if (request()->input('search_key')) {
             $terms = explode(' ', request()->input('search_key'));
             $products = Item::query()
-//            ->whereHas('items', function ($query) use ($terms) {
-//                foreach ($terms as $term) {
-//                    // Loop over the terms and do a search for each.
-//                    $query->where('name', 'like', '%' . $term . '%');
-//                }
-//            })
                 ->where(function ($query) use ($terms) {
                     foreach ($terms as $term) {
                         $query->where('name', 'like', '%' . $term . '%');
                     }
                 })
+                ->orWhere(function ($query) use ($terms) {
+                    foreach ($terms as $term) {
+                        $query->where('description', 'like', '%' . $term . '%');
+                    }
+                })
                 ->get();
+
             if (!empty($products)) {
                 $key = KeyWord::where('search_key', $terms[0])->first();
                 if (empty($key)) {
@@ -48,7 +48,7 @@ class ItemController extends Controller
                 }
             }
         } else {
-            $products = Item::all();
+            $products = Item::paginate(10);
         }
 
         return view('items.index', ['products' => $products]);
@@ -85,7 +85,7 @@ class ItemController extends Controller
     {
         $status = ItemStatus::getKey($item->status);
         return view('items.show')->with([
-            'item' => $item,
+            'product' => $item,
             'status' => $status,
         ]);
     }
